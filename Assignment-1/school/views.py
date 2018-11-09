@@ -35,7 +35,6 @@ def adddstu(request):
     if 'name' in request.GET:
         message = request.GET['name']
         message2 = request.GET['acyear']
-        message3 = request.GET['course']
         student = Student()
         student.name = message
         student.ac_year = message2
