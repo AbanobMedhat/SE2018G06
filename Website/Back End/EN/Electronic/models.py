@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class CustomUser(AbstractUser):
-    priority = models.IntegerField(null=True)
+    priority = models.IntegerField(default=1)
 
     def __str__(self):
         return self.email
