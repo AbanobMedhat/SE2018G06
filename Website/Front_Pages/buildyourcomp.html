@@ -101,92 +101,34 @@
             
         <div  class="col-md-6" style="padding:40px;" >
             <form action="" class="search-form">
-        <table style="height:80%">
-            <tr>
-                <td >Device Type &nbsp; <i class="fas fa-laptop fa-lg"></i></td>
-                <td>
-                    <select style="border-radius:5px;">
-                        <option value="phone"> Mobile Phone</option>
-                        <option value="laptop"> Laptop</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>RAM &nbsp; <i class="fas fa-microchip fa-lg"></i></td>
-                <td>
-                    <select style="border-radius: 5px;">
-                        <optgroup label="phone">
-                            <option value="1">1GB</option>
-                            <option value="2">2GB</option>
-                            <option value="3">3GB</option>
-                            <option value="4">4GB</option>
-                            <option value="8">8GB</option>
-
-                        </optgroup>
-                        <optgroup label="laptop">
-                        <option value="2">2GB</option>
-                        <option value="4">4GB</option>
-                        <option value="8">8GB</option>
-                       <option value="16">16GB</option>
-                        </optgroup>
-                    </select>
-                </td>
+       
+            
+                <p >Device Type &nbsp; <i class="fas fa-laptop fa-lg"></i></p>
+                <p>
+                    <input type="text" name="type" placeholder="Device Type" style="border-radius:5px;">
+                </p>
+            
+            
+                <p>RAM &nbsp; <i class="fas fa-microchip fa-lg"></i></p>
+                <p>
+                   <input type="text" name="ram" placeholder="RAM" style="border-radius:5px;"> 
+                </p>
                 
-            </tr>
-            <tr>
-                <td>CPU/Processor</td>
-                <td>
-                    <select style="border-radius: 5px;">
-                        <optgroup label="CPU">
-                            <option value="quad">Quad-core</option>
-                            <option value="octa">Octa-core</option>
-
-                        </optgroup>
-                        <optgroup label="Processor">
-                        <option value="amd">AMD E-Series</option>
-                        <option value="corei7"> intel Core i7</option>
-                        <option value="corei3">intel Core i3</option>
-                        <option value="celeron">intel Celeron</option>
-                        <option value="atom">intel Atom</option>
-                            </optgroup>
-                        
-                    </select>
-                </td>
-            </tr>
             
-            <tr>
-                <td>Internal Storage/Hard Drive Capacity</td>
-                <td>
-                <select style="border-radius: 5px;">
-                    <optgroup label="internal storage">
-                        <option value="8">8GB</option>
-                        <option value="16">16GB</option>
-                        <option value="64">64GB</option>
-                  </optgroup>
-                    <optgroup label="hard drive capacity">
-                  <option value="32">32GB</option>
-                <option value="256">256GB</option>
-                <option value="500">500GB</option>
-               <option value="512">512GB</option>
-               <option value="1t">1TB</option>
-                <option value="2t">2TB</option>
-                  </optgroup>
-                    </select>
-
-                </td>
-            </tr>
+           
+                <p>CPU/Processor</p>
+                <p> <input type="text" name="cpu" placeholder="CPU/Processor" style="border-radius:5px;" ></p>
             
-            <tr>
-                <td>VGA</td>
-                <td><input type="text" placeholder="VGA" style="border-radius:5px;"></td>
-            </tr>
-            <tr>
-                <td>
-<button type="submit" class="btn btn-default" style="width:30%;height:50%; background-color:grey;">Build</button>
+                <p>Internal Storage/Hard Drive Capacity</p>
+               <p><input type="text" name="harddisk" placeholder="Internal Storage/Hard Drive Capacity" name="harddisk" style="border-radius:5px;"></p>
+            
+        
+                <p>VGA</p>
+                <p><input type="text" placeholder="VGA" name="vga" style="border-radius:5px;"></p>
+            
+<input type="submit"  value="build" class="btn btn-default"  background-color:grey;">
 
-                </td>
-            </tr>
-        </table>
+                
             </form>
             
         </div>
