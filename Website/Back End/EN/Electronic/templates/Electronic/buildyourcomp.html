@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-      {% load staticfiles %}
+<html>
+    <head>
+        {% load staticfiles %}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+        <title style="font-weight: bold;"> Build Your Computer</title>
         <link rel="icon" href={% static 'Electronic/images/icons/download2.png' %}>
-        <script src={% static 'Electronic/js/menutoggle.js' %}></script>
-
+        <script src={%static 'Electronic/js/menutoggle.js'%}></script>
         <link href={% static 'Electronic/css/details.css' %} rel="stylesheet">
+
+
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -18,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
+   
 
     <!-- Bootstrap core CSS -->
     <link href={% static 'Electronic/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
@@ -28,28 +27,10 @@
     <link href={% static 'Electronic/css/shop-homepage.css' %} rel="stylesheet">
 
     </head>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 col-md-7">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {% include 'Electronic/form-template.html' %}
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<body>
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <body>
+        
+        <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     {% if user.is_authenticated %}
        <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn"><i class="fas fa-bars"></i></button>
@@ -126,26 +107,47 @@
 
        </li>
         {% endif %}
-    </nav
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 col-md-7">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {% include 'Electronic/form-template.html' %}
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
-                        </div>
+    </nav>
+        <div class="col-md-12">
+            
+     <img src={% static 'Electronic/images/laptops.jpg' %} style="float:right;height:60%;">
 
-                    </form>
-                </div>
-            </div>
+            
+        <div  class="col-md-6" style="padding:40px;" >
+            <form action={% url 'result' %} class="search-form" method="post">
+                {% csrf_token %}
+            
+                <p >Device Type &nbsp; <i class="fas fa-laptop fa-lg"></i></p>
+                <p>
+                    <input type="text" name="type" placeholder="Device Type" style="border-radius:5px;">
+                </p>
+            
+            
+                <p>RAM &nbsp; <i class="fas fa-microchip fa-lg"></i></p>
+                <p>
+                   <input type="text" name="ram" placeholder="RAM" style="border-radius:5px;">
+                </p>
+                
+            
+           
+                <p>CPU/Processor</p>
+                <p> <input type="text" name="cpu" placeholder="CPU/Processor" style="border-radius:5px;" ></p>
+            
+                <p>Internal Storage/Hard Drive Capacity</p>
+               <p><input type="text" name="harddisk" placeholder="Internal Storage/Hard Drive Capacity" name="harddisk" style="border-radius:5px;"></p>
+            
+        
+                <p>VGA</p>
+                <p><input type="text" placeholder="VGA" name="vga" style="border-radius:5px;"></p>
+            
+<input type="submit"  value="build" class="btn btn-default"  background-color:grey;">
+
+                
+            </form>
+            
         </div>
-    </div>
-</div>
-</body>
+       
+        
+        </div>
+    </body>
 </html>

@@ -11,6 +11,7 @@
     <meta name="author" content="">
      <link href={% static 'Electronic/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
     <link href={% static 'Electronic/css/login.css' %} rel="stylesheet" type="text/css">
+    <link href={% static 'Electronic/css/details.css' %} rel="stylesheet">
 
 	<title>Login-Electronic News</title>
 	<meta charset="UTF-8">
@@ -65,7 +66,7 @@
               <a class="nav-link" href={% url 'addproduct' %}>Add product</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="buildyourcomp.html">Build your computer</a>
+              <a class="nav-link" href={% url 'build' %}>Build your computer</a>
             </li>
 
             <li class="nav-item">
@@ -109,7 +110,7 @@
 
        </li>
         {% endif %}
-    </nav>
+    </nav
 
 
 

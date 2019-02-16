@@ -44,7 +44,9 @@ def addProduct(request):
     prod.battery = request.POST['battery']
     prod.price = request.POST['price']
     prod.save()
-    return render(request, 'home.html')
+    all_products = Product.objects.all()
+    context = {'all_prod': all_products}
+    return render(request, 'home.html', context)
 
 
 
@@ -67,9 +69,14 @@ class ViewFavorite(generic.ListView):
         return Favorite.objects.all()
 
 
-# class DeleteFavorite(DeleteView):
-#     model = Favorite
-#     success_url = reverse_lazy('home')
+def deletefav(request, id):
+    fav = Favorite()
+    fav = Favorite.objects.get(pk=id)
+    fav.delete()
+    all_favo = Favorite.objects.all()
+    context = {'all_favo': all_favo}
+    return render(request, 'Electronic/favorite_list.html', context)
+
 
 
 class ADDNewProduct(generic.CreateView):
@@ -86,6 +93,18 @@ class UpdateProduct(UpdateView):
 class DeleteProduct(DeleteView):
     model = Product
     success_url = reverse_lazy('home')
+
+
+def buildyourcomp(request):
+    typo = request.POST['type']
+    ram = request.POST['ram']
+    cpu = request.POST['cpu']
+    result = Product.objects.filter(CPU__contains=cpu, ram__contains=ram, type__contains=typo)
+    return render(request, 'Electronic/buildyourcompresults.html', {'result': result})
+
+
+def buildview(request):
+    return render(request, 'Electronic/buildyourcomp.html')
 
 
 @login_required
