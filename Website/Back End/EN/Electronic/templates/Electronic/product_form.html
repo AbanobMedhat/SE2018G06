@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load staticfiles %}
-  <head>
+
+<head>
+      {% load staticfiles %}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
         <link rel="icon" href={% static 'Electronic/images/icons/download2.png' %}>
         <script src={% static 'Electronic/js/menutoggle.js' %}></script>
+
+        <link href={% static 'Electronic/css/details.css' %} rel="stylesheet">
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -20,15 +23,33 @@
     <!-- Bootstrap core CSS -->
     <link href={% static 'Electronic/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
     <link href={% static 'Electronic/css/buildyourcomp.css' %} rel="stylesheet">
-    <link href={% static 'Electronic/css/details.css' %} rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href={% static 'Electronic/css/shop-homepage.css' %} rel="stylesheet">
 
     </head>
-    <body>
-        
-        <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'Electronic/form-template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     {% if user.is_authenticated %}
        <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn"><i class="fas fa-bars"></i></button>
@@ -42,16 +63,16 @@
 
 
       <div class="container">
-        
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-            
+
         </button>
-          
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-              
-                 
+
+
             <li>
               <a class="nav-link active" href={% url 'home' %}>Home
                 <span class="sr-only"></span>
@@ -63,11 +84,11 @@
             <li class="nav-item ">
               <a class="nav-link" href="buildyourcomp.html">Build your computer</a>
             </li>
-           
+
             <li class="nav-item">
               <a class="nav-link" href="signup.html"></a>
             </li>
-            
+
           </ul>
         </div>
       </div>
@@ -76,7 +97,7 @@
       <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            
+
         </div>
     </div>
     <div class="row" >
@@ -106,21 +127,25 @@
        </li>
         {% endif %}
     </nav>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'Electronic/form-template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
 
-
-<div>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<h1 style='text-align: center;'>{{ product.title }}</h1>
-<center><img src="{{ product.logo }}" ></center>
-    <h3 style='text-align: center;'> CPU: {{ product.CPU }}</h3>
-    <h3 style='text-align: center;'> GPU: {{ product.GPU }}</h3>
-    <h3 style='text-align: center;' > Battery: {{ product.battery }}</h3>
-    <h3 style='text-align: center;'> RAM: {{ product.ram }}</h3>
-    <h3 style='text-align: center;'> Colour : {{ product.color }}</h3>
-    <h3 style='text-align: center;'> Storage: {{ product.storage }}</h3>
-    <h2 style='text-align: center;'> Price: {{ product.price }}</h2>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+</body>
+</html>

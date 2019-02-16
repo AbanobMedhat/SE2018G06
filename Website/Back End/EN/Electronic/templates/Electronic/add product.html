@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load staticfiles %}
-  <head>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+  <head>
+
+    {% load staticfiles %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        
         <link rel="icon" href={% static 'Electronic/images/icons/download2.png' %}>
         <script src={% static 'Electronic/js/menutoggle.js' %}></script>
+
+
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -15,17 +19,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
+   
 
     <!-- Bootstrap core CSS -->
     <link href={% static 'Electronic/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
     <link href={% static 'Electronic/css/buildyourcomp.css' %} rel="stylesheet">
-    <link href={% static 'Electronic/css/details.css' %} rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href={% static 'Electronic/css/shop-homepage.css' %} rel="stylesheet">
 
     </head>
     <body>
+
+      
+      
+    <style >
+    p{
+      color:darkblue;
+      font-weight: bold;
+      padding-left: 18px;
+      display: inline-block;
+    }
+    input[type=text] {
+       margin-left: 18px;
+      display: inline-block;
+    }
+    </style>
         
         <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -42,16 +61,16 @@
 
 
       <div class="container">
-        
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-            
+
         </button>
-          
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-              
-                 
+
+
             <li>
               <a class="nav-link active" href={% url 'home' %}>Home
                 <span class="sr-only"></span>
@@ -63,11 +82,11 @@
             <li class="nav-item ">
               <a class="nav-link" href="buildyourcomp.html">Build your computer</a>
             </li>
-           
+
             <li class="nav-item">
               <a class="nav-link" href="signup.html"></a>
             </li>
-            
+
           </ul>
         </div>
       </div>
@@ -76,7 +95,7 @@
       <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            
+
         </div>
     </div>
     <div class="row" >
@@ -107,20 +126,50 @@
         {% endif %}
     </nav>
 
+</br>
+</br>
 
-<div>
-<br/>
-<br/>
-<br/>
-<br/>
+<form method="post" action={% url 'added' %}>
+    {% csrf_token %}
+<p > type </p>
+<input  type="text" name='type' id='name' >
+<hr>
+<p> title </p>
+<input type='text' name='title' id='name'>
+<hr>
+<p> cpu </p>
+<input type='text' name='cpu' id='name'>
+<hr>
+<p> gpu</p>
+<input type='text' name='gpu' id='name'>
+<hr>
+<p> logo</p>
+<input type='text' name='logo' id='name'>
+<hr>
+<p> ram</p>
+<input type='text' name='ram' id='name'>
+<hr>
+<p> storage</p>
+<input type='text' name='storage' id='name'>
+<hr>
+<p> color</p>
+<input type='text' name='color' id='name'>
+<hr>
+<p> battery</p>
+<input type='text' name='battery' id='name'>
+<hr>
+<p> price</p>
+<input type='text' name='price' id='name'>
+<hr>
+<<button class="login100-form-btn" type="submit" >
+							Add Product
+						</button>
+</form>
 
-<h1 style='text-align: center;'>{{ product.title }}</h1>
-<center><img src="{{ product.logo }}" ></center>
-    <h3 style='text-align: center;'> CPU: {{ product.CPU }}</h3>
-    <h3 style='text-align: center;'> GPU: {{ product.GPU }}</h3>
-    <h3 style='text-align: center;' > Battery: {{ product.battery }}</h3>
-    <h3 style='text-align: center;'> RAM: {{ product.ram }}</h3>
-    <h3 style='text-align: center;'> Colour : {{ product.color }}</h3>
-    <h3 style='text-align: center;'> Storage: {{ product.storage }}</h3>
-    <h2 style='text-align: center;'> Price: {{ product.price }}</h2>
-</div>
+
+
+
+
+
+</body>
+</html>
