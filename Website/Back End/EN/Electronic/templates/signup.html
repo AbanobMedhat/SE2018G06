@@ -18,7 +18,7 @@
     <meta name="author" content="">
      <link href={% static 'Electronic/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
     <link href={% static 'Electronic/css/login.css' %} rel="stylesheet">
-
+    <link href={% static 'Electronic/css/details.css' %} rel="stylesheet">
 	<title>Login-Electronic News</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,45 +72,46 @@
 <body>
        
      <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    {% if user.is_authenticated %}
        <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn"><i class="fas fa-bars"></i></button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="profile.html">Profile</a>
-    <a href="add%20to%20favourite.html">Favorite List</a>
-    
+    <a href={% url 'profile' %}>Profile</a>
+    <a href={% url 'favorite' %}>Favorite List</a>
+
   </div>
 </div>
+    {% endif %}
+
 
       <div class="container">
-        
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-            
+
         </button>
-          
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-              
-                 
+
+
             <li>
-              <a class="nav-link" href="home.html">Home
+              <a class="nav-link active" href={% url 'home' %}>Home
                 <span class="sr-only"></span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="compare.html">Compare</a>
+            <li class="nav-item active ">
+              <a class="nav-link" href={% url 'addproduct' %}>Add product</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Build your computer</a>
+            <li class="nav-item ">
+              <a class="nav-link" href="buildyourcomp.html">Build your computer</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="signup.html"></a>
             </li>
-            
+
           </ul>
         </div>
       </div>
@@ -119,7 +120,7 @@
       <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            
+
         </div>
     </div>
     <div class="row" >
@@ -134,19 +135,21 @@
         </div>
     </div>
 </div>
-       <li class="btn-default btn ">
-           <a class="nav-link" href="login.html">
-               {% if user.is_authenticated %}
-                      Hi {{ user.username }}
-                      <p><a href="{% url 'logout' %}">logout</a></p>
-                    {% else %}
-                        <a href="{% url 'login' %}">login</a> |
-                        <a href="{% url 'signup' %}">signup</a>
-                        {% endif %}
-
-           </a>
+      {% if user.is_authenticated %}
+            <li class="btn-default btn ">
+            <a class="nav-link">Hi {{ user.username }}</a>
+            <a class="nav-link" href={% url 'logout' %}>logout</a>
        </li>
-    </nav> 
+        {% else %}
+       <li class="btn-default btn ">
+           <a class="nav-link" href={% url 'login' %}>Sign in</a>
+       </li>
+       <li class="btn-default btn ">
+           <a class="nav-link" href={% url 'signup' %}>Sign up</a>
+
+       </li>
+        {% endif %}
+    </nav>
 
 
 
