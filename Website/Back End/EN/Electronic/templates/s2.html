@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href={% static 'Home/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href={% static 'Home/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href={% static 'Home/vendor/magnific-popup/magnific-popup.css' %} rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href={% static 'Home/css/creative.min.css' %} rel="stylesheet">
+	  <link href={% static 'Home/css/a.css' %} rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body id="page-top">
+
+   <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand " href={% url 'index' %}>Electronics</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+		<li>
+		  <div class="form-group has-feedback">
+                <label for="search" class="sr-only">Search</label>
+                <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+              </div>
+		</li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'index' %}>Home</a>
+          </li>
+		  {% if user.is_authenticated %}
+                <li class="nav-item">
+                <a class="nav-link">Hi {{ user.username }}</a>
+            <a class="nav-link" href={% url 'logout' %}>Logout</a>
+          </li>
+                {% else %}
+		   <li class="nav-item">
+            <a class="nav-link" href={% url 'login' %}>SIGN IN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'signup' %}>SIGN UP</a>
+          </li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+	
+    <section id="contact">
+      <div class="container">
+        <br> <br><br><br><br> <br><br>
+    
+
+        
+        <div class="row">
+		
+          <div class="col-lg-12 ml-auto text-center " >
+		   <img src = {% static 'Home/img/p2.webp' %}  >
+		   </div>
+		      <div class = "clearfix"></div>
+
+		   <div class="col-lg-12 ml-auto control "> <br > <br ></div>
+		   <div class="col-lg-12 ml-auto text-center ">
+		
+		   	<h2> Samsung M30 Price in India Said to Start at Rs. 15,000, February Launch Date Tipped </h2>
+
+          </div>
+		   <div class="col-lg-12 ml-auto control "> <br > <br ></div>
+		    <div class = "clearfix"></div>
+		    
+		       <div class="col-lg-12 ml-auto text-center ">
+		
+		   	<p> Samsung M30 looks set to follow on the footsteps of the Samsung M20 and Samsung M10. After a successful launch of two India-first Galaxy M-Series smartphones in January, Samsung is said to be looking up to launch the Samsung M30 in India at a starting price of Rs. 15,000 in February. Industry sources told IANS on Thursday that the sale of Samsung Galaxy M30 with a triple rear-camera system and a massive 5,000mAh battery will begin in the first week of March. The company currently offers two Galaxy M-Series phones — Galaxy M10 and Galaxy M20 – in the country, which would make the Samsung M30 the third member of the series.</p>
+
+<h6>Samsung M30 price in India and specifications</h6>
+<p>Samsung will bring Super-AMOLED Infinity V display to the Galaxy M30, making it a power-packed offering for young millennials. The phone will powered by the latest Exynos 7904 processor. The Galaxy M30 is believed to come in 4GB RAM + 64GB internal storage variant. The device is also likely to have a 6GB RAM + 128GB storage variant. Other specifications of the phone are a mystery at this point. </p>
+
+<p>Samsung India in January launched Galaxy M20 and Galaxy M10 smartphones at a starting price of Rs. 10,990 and Rs. 7,990, respectively, to take on Xiaomi's budget Redmi-Series in the country. The Galaxy M20 is priced at Rs. 12,990 for the 4GB+64GB variant, whereas the 3GB+32GB variant costs Rs. 10,990. On the other hand, the Galaxy M10 is priced at Rs. 8,990 for the 3GB+32GB variant and Rs. 7,990 for the 2GB+16GB.</p>
+
+<p>Both the phones were a complete sell-out on Amazon India on February 5, making an "unprecedented" first day sale record for the South Korean tech giant. The company has held fourth flash sales for the two phones since and the fifth one is scheduled for February 19 on Amazon India and Samsung Online Shop. It is unclear when Samsung plans to put the phones up for open sale. 
+
+ </p>
+
+          </div>
+        </div>
+
+      </div>
+
+  
+ 
+</div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src={% static 'Home/vendor/jquery/jquery.min.js' %}></script>
+    <script src={% static 'Home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+
+    <!-- Plugin JavaScript -->
+    <script src={% static 'Home/vendor/jquery-easing/jquery.easing.min.js' %}></script>
+    <script src={% static 'Home/vendor/scrollreveal/scrollreveal.min.js' %}></script>
+    <script src={% static 'Home/vendor/magnific-popup/jquery.magnific-popup.min.js' %}></script>
+
+    <!-- Custom scripts for this template -->
+    <script src={% static 'Home/js/creative.min.js' %}></script>
+
+  </body>
+
+</html>

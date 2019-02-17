@@ -7,7 +7,11 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Electronic.urls')),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
+    path('subjects/', TemplateView.as_view(template_name='subjects.html'), name='subjects'),
+    path('s1/', TemplateView.as_view(template_name='s1.html'), name='s1'),
+    path('s2/', TemplateView.as_view(template_name='s2.html'), name='s2'),
+    path('s3/', TemplateView.as_view(template_name='s3.html'), name='s3'),
     path('users/', include('Electronic.urls')),
     path('users/', include('django.contrib.auth.urls')),
 ]

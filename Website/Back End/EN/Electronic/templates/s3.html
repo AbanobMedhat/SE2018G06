@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href={% static 'Home/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href={% static 'Home/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href={% static 'Home/vendor/magnific-popup/magnific-popup.css' %} rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href={% static 'Home/css/creative.min.css' %} rel="stylesheet">
+	  <link href={% static 'Home/css/a.css' %} rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body id="page-top">
+
+   <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand " href={% url 'index' %}>Electronics</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+		<li>
+		  <div class="form-group has-feedback">
+                <label for="search" class="sr-only">Search</label>
+                <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+              </div>
+		</li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'index' %}>Home</a>
+          </li>
+		  {% if user.is_authenticated %}
+                <li class="nav-item">
+                <a class="nav-link">Hi {{ user.username }}</a>
+            <a class="nav-link" href={% url 'logout' %}>Logout</a>
+          </li>
+                {% else %}
+		   <li class="nav-item">
+            <a class="nav-link" href={% url 'login' %}>SIGN IN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'signup' %}>SIGN UP</a>
+          </li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+	
+    <section id="contact">
+      <div class="container">
+        <br> <br><br><br><br> <br><br>
+    
+ 
+        <div class="row">
+		
+          <div class="col-lg-12 ml-auto text-center " >
+		   <img src = {% static 'Home/img/p3.webp' %}  >
+		   </div>
+		      <div class = "clearfix"></div>
+
+		   <div class="col-lg-12 ml-auto control "> <br > <br ></div>
+		   <div class="col-lg-12 ml-auto text-center ">
+		
+		   	<h2> How to Help Your Kids Strike a Balance Between Screen Time and the Real World </h2>
+
+          </div>
+		   <div class="col-lg-12 ml-auto control "> <br > <br ></div>
+		    <div class = "clearfix"></div>
+		    
+		       <div class="col-lg-12 ml-auto text-center ">
+		
+		   	<p>  When it comes to kids and screens, it often feels as though parents are wearing headphones with conflicting messages piped into each ear. On one side: a steady drumbeat of increasingly dire warnings about game addictions and the developmental consequences of letting kids spend too much time on devices. On the other side: the powerful siren song of phones, laptops, tablets and video games. Our kids are constantly nagging us for access - more time for playing games, doing homework, catching up with friends or watching endless hours of YouTube.</p>
+
+<p>As with everything, it's up to parents to find balance. We need to figure out where the line is between what is necessary, or at least acceptable, and what is too much. Although there are general guidelines on how to set those limits, the answer will vary from family to family, and even from one child to another within a family, says David Hill, a paediatrician and father of five in Chapel Hill, North Carolina.</p>
+
+<p>As you come up with a plan, it's important to look at your needs and your child's needs, and tailor the guidelines appropriately. For example, Hill, the chair of the American Academy of Pediatrics Council on Communications and Media, says that for a travel soccer player who spends 90 minutes at practice three times a week, on top of homework, sleeping and socializing, the right amount may be five minutes a day. Another child who has fewer activities and obligations may have time for more. It also depends on what the child is doing on the device, Hill says. Working on a school project with friends is not the same thing as playing a first-person shooter game.</p>
+
+<p>And don't get caught up in the peer pressure or the hype, he says.</p>
+
+<p>"We've been sold this idea that these things are highly addictive and appealing to children, whereas children, especially young children, have a pretty good idea what they need," he added. "This isn't as hard as it might look on the surface."</p>
+
+<p>We asked Hill and other experts how parents can help kids fight the lure of the screen. Here are their suggestions.</p>
+
+<h6>1. Keep playing with your kids</h6>
+<p>There's this weird thing that happens as our children get older and no longer require constant supervision. Parents tend to retreat into the background, leaving kids to figure out how to amuse themselves. A certain amount of that is a good thing. But the best way to get a child interested in doing something, whether it's a jigsaw puzzle, a card game or shooting baskets, is to do it with them, says Katie Hurley, a psychotherapist in Los Angeles and the author of "The Happy Kid Handbook."</p>
+
+<p>"Play changes as kids grow, but they don't stop needing that meaningful connection with parents," Hurley says. Teach them to play your favorite card game, bake with them, or find another activity you can share. "They may say no at first, but keep trying."</p>
+
+<p>Lynne Ticknor, the education director at the Parent Encouragement Program in Kensington, Maryland, agrees that directly engaging with kids is a good way to get them interested in device-free activities. She suggests incorporating music or food that your child enjoys as part of the activity to draw them in.</p>
+
+<h6>2. Just say no </h6>
+<p>"A lot of parents seem to feel great difficulty with saying no to their kids," says Roberta Michnick Golinkoff, a professor of education, psychology, linguistics and cognitive science at the University of Delaware and the author of "Becoming Brilliant." She suggests taking a page from former first lady Nancy Reagan's anti-drug campaign.</p>
+
+<p>"Everything is about moderation, right?" she says. "I'm not a Luddite; I'm not saying keep these electronic devices from kids. But there is a way in which parents can modify what happens."</p>
+
+<p>Hurley says it's often harder for parents to set limits because kids are accustomed to negotiating. In the 1970s, she says, kids had a lot of freedom, but they knew that a "no" from their parents was the end of the conversation. These days, she says, kids are more inclined to bargain. Parents need to stand their ground.</p>
+
+<p>"Acknowledge the struggle, but stick to the limits," she says. "We're in charge of their emotional health. Twelve-year-olds are not known for making the best decisions."</p>
+
+<p>And although there may be tears initially, after the first week or so, the children get used to the new reality, and adapt.</p>
+
+<h6>3. Slow down on purging toys</h6>
+<p>Organizing, decluttering and minimizing are all the rage at the moment. But before deciding those old American Girl dolls no longer spark joy for your tween, hit the pause button, Hurley says. Children have a tendency to revisit items they've seemingly outgrown, and having a healthy amount of kid clutter at the ready can promote imaginative play.</p>
+
+<p>"Kids have a way of going back to things when they're struggling, to go back to a safer time," she says. "They'll use all kinds of everyday things to create play scenarios. But if it's all taken away and we're all living in perfectly clean spaces that aren't playful, they're not going to play."</p>
+
+<p>Providing them with options for analog play, whether it's crayons and paper, blocks, board games, or cardboard boxes they can use to create a fort, can help them resist devices.</p>
+
+<h6>4. Let them be bored</h6>
+<p>"We've become very uncomfortable with boredom, for adults as well," says Hill, the pediatrician from North Carolina. "We're on the elevator, looking at our phones. . . . The idea that there has to be a thing at all times is pervasive."</p>
+
+<p>He says brain imaging studies have shown that when people are bored, their brains "light up like crazy" as they engage in creative thought.</p>
+
+<p>When one of his children, who are now ages 14 to 20, would come to him complaining that they were bored, he says, he would tell them, "Good. Now go find something to do." When he would hear a crash from the other room 30 minutes later, Hill says, he would know they had come up with something.</p>
+
+<p>Hurley says that once the device is gone "and they go through being bored but realize it's not coming back, they start going into that higher level of play that is so wonderful and educational."</p>
+
+<h6>5. Get their input early</h6>
+<p>Before bringing devices into the picture, sit down as a family and talk about the expectations of how, and how much, they will be used, Hill says.</p>
+
+<p>"The idea is not to introduce the screens and then a year later say 'Hey, this is not what we wanted,' " he says. "Be thoughtful about it and say, 'Here's what we agree this is for, here's the uses that are not so good, and here are the consequences if the device is misused.' "</p>
+
+<p>Involving the kids in an open and honest discussion on the front end will set clear boundaries and ensure that everyone is working from the same set of guidelines.</p>
+
+<p>"Then when you have to initiate a consequence, you can say, 'This is what we agreed to.' That enhances a sense of ownership for the kids. Childhood is a time when you don't have a lot of control, so offering some control is a constructive way to have a conversation," he says.</p>
+
+<h6>6. Walk the walk</h6>
+<p>It's hard to convince kids they should be doing something other than staring at their phones when that's how we spend most of our free time.</p>
+
+<p>"I worry about this next generation," Golinkoff says. "Remember when you used to push a stroller, you would talk to the kid about what you were seeing. Now adults are pushing a stroller and talking on their cellphone, so the kids are getting less input. . . . We need to put the phones away and interact with children. Then we're making ourselves available and sending the message that the relationship we have is more important than anything."</p>
+
+          </div>
+        </div>
+
+      </div>
+
+  
+ 
+</div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src={% static 'Home/vendor/jquery/jquery.min.js' %}></script>
+    <script src={% static 'Home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+
+    <!-- Plugin JavaScript -->
+    <script src={% static 'Home/vendor/jquery-easing/jquery.easing.min.js' %}></script>
+    <script src={% static 'Home/vendor/scrollreveal/scrollreveal.min.js' %}></script>
+    <script src={% static 'Home/vendor/magnific-popup/jquery.magnific-popup.min.js' %}></script>
+
+    <!-- Custom scripts for this template -->
+    <script src={% static 'Home/js/creative.min.js' %}></script>
+
+  </body>
+
+</html>

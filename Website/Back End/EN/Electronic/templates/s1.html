@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href={% static 'Home/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href={% static 'Home/vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href={% static 'Home/vendor/magnific-popup/magnific-popup.css' %} rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href={% static 'Home/css/creative.min.css' %} rel="stylesheet">
+	  <link href={% static 'Home/css/a.css' %} rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body id="page-top">
+
+   <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand " href={% url 'index' %}>Electronics</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+		<li>
+		  <div class="form-group has-feedback">
+                <label for="search" class="sr-only">Search</label>
+                <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+              </div>
+		</li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'index' %}>Home</a>
+          </li>
+		  {% if user.is_authenticated %}
+                <li class="nav-item">
+                <a class="nav-link">Hi {{ user.username }}</a>
+            <a class="nav-link" href={% url 'logout' %}>Logout</a>
+          </li>
+                {% else %}
+		   <li class="nav-item">
+            <a class="nav-link" href={% url 'login' %}>SIGN IN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'signup' %}>SIGN UP</a>
+          </li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+	
+    <section id="contact">
+      <div class="container">
+        <br> <br><br><br><br> <br><br>
+    
+    
+  
+        <div class="row">
+		
+          <div class="col-lg-12 ml-auto text-center " >
+		   <img src = {% static 'Home/img/p1.webp' %}  >
+		   </div>
+		      <div class = "clearfix"></div>
+
+		   <div class="col-lg-12 ml-auto control "> <br > <br ></div>
+		   <div class="col-lg-12 ml-auto text-center ">
+		
+		   	<h2> Mi 9 Images, Video Posted by CEO; Mi 9 Explorer Edition Leaked Render Surfaces Online </h2>
+
+          </div>
+		   <div class="col-lg-12 ml-auto control "> <br > <br ></div>
+		    <div class = "clearfix"></div>
+		    
+		       <div class="col-lg-12 ml-auto text-center ">
+		
+		   	<p> Xiaomi is set to launch its latest flagship smartphone, the Mi 9, on February 20 in China. With its launch in the build-up to Mobile World Congress 2019, the Chinese smartphone maker will be among the first manufacturers to unveil its flagship for the year, even as other manufacturers will be preparing for summer launches. Thanks to some official images posted on Weibo, we now have an early look at the new device, while the images also give away some key features of the new phone. Separately, a blogger has posted a leaked image of what is claimed to be the Xiaomi Mi 9 Explorer Edition.
+
+<p>A handful of images and a short video have been posted to Chinese social media website Weibo by the verified account of Xiaomi CEO Lei Jun, thereby lending legitimacy to the renders. The images give us a good look at what to expect from the new phone; of particular note is the triple camera setup at the rear. The front of the phone isn't shown in the renders, and the rear shows an interesting gradient blue and green colour, with the rough translation from the post reading as ‘holographic illusion blue'. The post further describes a "nano-scale laser holography process, plus double layer coating" as responsible for the "rainbow colours" and "faintly [...] metallic lustre".</p>
+
+<h6>Mi 9 release date</h6>
+<p>The Xiaomi Mi 9 is set to be launched on February 20, which is the same day as the launch event for the Samsung Galaxy S10 series. According to rumours, the Mi 9 Explorer Edition could also be launched on the same day. This variant of the phone is said to sport a quad-camera setup at the rear. An unofficial render of this has surfaced as well, but we'll wait till the official launch before confirming this.</p>
+
+<h6>Mi 9 specifications (expected)</h6>
+<p>The phone is likely to be powered by the flagship Qualcomm Snapdragon 855 chipset, and is also rumoured to come with 27W fast charging. The Xiaomi Mi 9 could come with MIUI 10 out of the box, based on Android 9 Pie. The primary camera at the rear is likely to be a 48-megapixel shooter, while a second 12-megapixel camera and third ToF 3D sensor will also be part of the setup. The phone is also said to be coming with an in-display fingerprint sensor. 
+
+Coming to the Xiaomi Mi 9 Explorer Edition's leaked image, posted on Weibo by a blogger, we see a quad rear camera, and a 'transparent' back panel like its predecessor. The post adds that the smartphone will have more memory than the Xiaomi Mi 9, though it's uncertain if both RAM and storage are being referred to. The Mi 9 Explorer Edition price is said to range between CNY 3,499 (roughly Rs. 36,900) to CNY 4,999 (roughly Rs. 52,600). </p>
+
+          </div>
+        </div>
+
+      </div>
+
+  
+ 
+</div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src={% static 'Home/vendor/jquery/jquery.min.js' %}></script>
+    <script src={% static 'Home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+
+    <!-- Plugin JavaScript -->
+    <script src={% static 'Home/vendor/jquery-easing/jquery.easing.min.js' %}></script>
+    <script src={% static 'Home/vendor/scrollreveal/scrollreveal.min.js' %}></script>
+    <script src={% static 'Home/vendor/magnific-popup/jquery.magnific-popup.min.js' %}></script>
+
+    <!-- Custom scripts for this template -->
+    <script src={% static 'Home/js/creative.min.js' %}></script>
+
+  </body>
+
+</html>
